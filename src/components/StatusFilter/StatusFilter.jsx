@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 
 import style from './StatusFilter.module.css';
-import { setStatusFilter } from 'redux/filterSlice';
+import { setStatusFilter } from 'redux/contacts/filterSlice';
 
 
 const StatusFilter = () => {

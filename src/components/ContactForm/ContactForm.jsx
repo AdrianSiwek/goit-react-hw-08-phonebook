@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getContacts } from "../../redux/selectors";
+import { getContacts } from "../../redux/contacts/selectors";
 
 import styles from './ContactForm.module.css';
-import { addContact } from "redux/operations";
+import { addContact } from "redux/contacts/operations";
 
 
 
