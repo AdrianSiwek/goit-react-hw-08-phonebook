@@ -20,15 +20,15 @@ const RegisterForm = () => {
     
     return (
         <form className={style.form} onSubmit={handleSubmit} autoComplete="off">
-            <label className={StyleSheet.label}>
+            <label className={style.label}>
                 Username
                 <input type="text" name='name'/>
             </label>
-            <label className={StyleSheet.label}>
+            <label className={style.label}>
                 Email
                 <input type="email" name="email" />
             </label>
-            <label className={StyleSheet.label}>
+            <label className={style.label}>
                 Password
                 <input type="password" name='password' />
             </label>
