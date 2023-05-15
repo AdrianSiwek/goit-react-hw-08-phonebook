@@ -7,3 +7,34 @@
     flex-direction: column;
     margin-bottom: 16px;
 }
+
+/* .username {
+    position: relative;
+}
+
+.control{
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    border: 0;
+    background: #1c1e21;
+    color: #f7f7f7;
+    
+    transition: 0.4s;
+} */
+
+input {
+    background: blue;
+    border: 0;
+    color: #f2f2f2;
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    outline: none !important;
+    border-radius: 6px;
+    width: 100%;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
