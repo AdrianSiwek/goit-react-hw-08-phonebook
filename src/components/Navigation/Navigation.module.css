@@ -1,3 +1,13 @@
+.home{
+    display: flex;
+    align-items: center;
+}
+
+.phonebook{
+    display: flex;
+}
+
+
 .link {
     display: inline-block;
     text-decoration: none;

@@ -7,7 +7,8 @@ import style from './AppBar.module.css';
 const AppBar = () => {
     const { isLoggedIn } = useAuth();
 
-    return (<header className={style.header}>
+  return (
+    <header className={style.header}>
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </header>

@@ -1,3 +1,5 @@
+import phonebook from '../images/phonebook.png'
+
 const styles = {
   container: {
     minHeight: 'calc(100vh - 50px)',
@@ -21,6 +23,7 @@ export default function Home() {
           💁‍♀️
         </span>
       </h1>
+      <img src={phonebook} alt=""/>
     </div>
   );
 }

@@ -19,7 +19,9 @@ const RegisterForm = () => {
     }
     
     return (
-        <form className={style.form} onSubmit={handleSubmit} autoComplete="off">
+        <div className={style.registrationForm}>
+            <h3 className={style.formTitle}>Registration</h3>
+        <form className={style.formField} onSubmit={handleSubmit} autoComplete="off">
             <label className={style.label}>
                 Username
                 <input type="text" name='name'/>
@@ -32,8 +34,9 @@ const RegisterForm = () => {
                 Password
                 <input type="password" name='password' />
             </label>
-            <button type="submit">Register</button>
-        </form>
+            <button type="submit" className={style.formSubmit}>Register</button>
+            </form>
+            </div>
       );
 }
  

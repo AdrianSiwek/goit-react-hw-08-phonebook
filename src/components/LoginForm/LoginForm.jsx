@@ -18,24 +18,26 @@ const LoginForm = () => {
     form.reset();
   };
 
-    return ( 
-        <form className={style.form} onSubmit={handleSubmit} autoComplete="off">
-      <label >
+  return ( 
+    <div className={style.loginForm}>
+      <h3 className={style.formTitle}>Log In</h3>
+        <form className={style.formField} onSubmit={handleSubmit} autoComplete="off">
+      <label>
         Email
           <input
-            className={style.control}
             type="email"
             name="email"
           />
       </label>
-      <label className={style.label}>
+      <label>
         Password
           <input
             type="password"
             name="password" />
       </label>
-      <button type="submit">Log In</button>
-    </form>
+      <button type="submit" className={style.formSubmit}>Log In</button>
+      </form>
+      </div>
      );
 }
  
