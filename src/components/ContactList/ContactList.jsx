@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getContacts, getErrorStatus, getFilterValue} from "redux/contacts/selectors";
 import { deleteContact } from "redux/contacts/operations";
 
+
 import styles from './ContactList.module.css';
 
 
@@ -18,9 +19,7 @@ export const ContactList = () => {
       contact.name.toLowerCase().includes(statusFilter.toLowerCase()) ||
       contact.number.replace(/-|\s/g, '').includes(statusFilter.replace(/-|\s/g, ''))
   );
-  const handleDeleteContact = data => {
-    dispatch(deleteContact(data));
-};
+
   
   
   return filtersContacts.length > 0 ?(
@@ -33,7 +32,7 @@ export const ContactList = () => {
          <button
             className={styles.btn}
             type="button"
-            onClick={() => handleDeleteContact(id)}
+            onClick={() => dispatch(deleteContact(id))}
           >
             <span>Delete</span>
           </button>        
