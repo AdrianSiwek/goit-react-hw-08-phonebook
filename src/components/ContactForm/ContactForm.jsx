@@ -34,12 +34,14 @@ const ContactForm = () => {
     
 
     return (
-            <div>
+        <div>
+            <div id="modal" className={styles.modal}>
+        <div className={styles.modalContent}></div>
                 <form className={styles.submit} onSubmit={handleSubmit}>
-                    <label className={styles.label}>
+                    <label className={styles.modalLabel}>
                         Name
                         <input
-                            className={styles.input}
+                            className={styles.modalInput}
                             type="text"
                             name="name"
                             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -47,10 +49,10 @@ const ContactForm = () => {
                             required
                         />
                     </label>
-                    <label className={styles.label}>
+                    <label className={styles.modalLabel}>
                     Number
                         <input
-                            className={styles.input}
+                            className={styles.modalInput}
                             type="tel"
                             name="number"
                             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -58,13 +60,11 @@ const ContactForm = () => {
                             required
                         />
                     </label>
-                    <button
-                        className={styles.btn}
-                        type="submit"
-                    >
-                        <span>Add contact</span> 
-                    </button>
+                    <button className={styles.modalButton} type="submit">
+              <span>Add contact</span>
+            </button>
                 </form>
+                </div>
             </div>
         );
     }

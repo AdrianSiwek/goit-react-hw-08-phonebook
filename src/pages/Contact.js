@@ -10,7 +10,7 @@ import ContactList from 'components/ContactList/ContactList';
 import styles from 'components/ContactList/ContactList.module.css';
 
 
-export const Contact = () => {
+const Contact = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoadingStatus);
   const error = useSelector(getErrorStatus);
@@ -19,13 +19,34 @@ export const Contact = () => {
     dispatch(fetchContact());
   }, [dispatch]);
 
+  const openModal = () => {
+    
+   
+const modal = document.getElementById('modal');
+    modal.style.display = 'block';
+  };
+
+
+  const closeModal = () => {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'none';
+  };
+
+
   return (
-    <div className={styles.form}>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <h2>Contacts</h2>
-      <StatusFilter />
-      {isLoading && !error ? <p>Loading...</p> : <ContactList />}
-    </div>
+    <>
+      <div>
+        <button onClick={openModal}>Add Contact</button>
+        <ContactForm />
+        <button onClick={closeModal}>X</button>
+      </div>
+      <div>
+        <h2>Contacts</h2>
+        <StatusFilter />
+        {isLoading && !error ? <p>Loading...</p> : <ContactList />}
+      </div>
+    </>
   );
 };
+
+export default Contact;
