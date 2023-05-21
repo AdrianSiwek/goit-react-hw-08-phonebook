@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { getContacts } from "../../redux/contacts/selectors";
 
+
 import styles from './ContactForm.module.css';
 import { addContact } from "redux/contacts/operations";
 
@@ -34,14 +35,12 @@ const ContactForm = () => {
     
 
     return (
-        <div>
-            <div id="modal" className={styles.modal}>
-        <div className={styles.modalContent}></div>
+            <div>
                 <form className={styles.submit} onSubmit={handleSubmit}>
-                    <label className={styles.modalLabel}>
+                    <label className={styles.label}>
                         Name
                         <input
-                            className={styles.modalInput}
+                            className={styles.input}
                             type="text"
                             name="name"
                             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -49,10 +48,10 @@ const ContactForm = () => {
                             required
                         />
                     </label>
-                    <label className={styles.modalLabel}>
+                    <label className={styles.label}>
                     Number
                         <input
-                            className={styles.modalInput}
+                            className={styles.input}
                             type="tel"
                             name="number"
                             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -60,11 +59,13 @@ const ContactForm = () => {
                             required
                         />
                     </label>
-                    <button className={styles.modalButton} type="submit">
-              <span>Add contact</span>
-            </button>
+                    <button
+                        className={styles.btn}
+                        type="submit"
+                    >
+                        <span>Add contact</span> 
+                    </button>
                 </form>
-                </div>
             </div>
         );
     }

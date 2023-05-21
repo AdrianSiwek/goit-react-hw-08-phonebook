@@ -2,6 +2,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { getContacts, getErrorStatus, getFilterValue} from "redux/contacts/selectors";
 import { deleteContact } from "redux/contacts/operations";
 
+import * as React from 'react';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 import styles from './ContactList.module.css';
 
@@ -25,18 +34,28 @@ export const ContactList = () => {
   return filtersContacts.length > 0 ?(
     <ul className={styles.list}>
           {filtersContacts.map(({ id, name, number }) => (
-        <li className={styles.contact} 
-          key={id}>
-        <p>{name}:</p>
-        <p>{number}</p>
-         <button
-            className={styles.btn}
-            type="button"
-            onClick={() => dispatch(deleteContact(id))}
+         <ListItem
+            key={id}
+            secondaryAction={
+              <Button variant="outlined" disableElevation
+                onClick={() => dispatch(deleteContact(id))}
+                startIcon={<DeleteIcon />}
+              >
+                Delete
+              </Button>
+            }
+            disablePadding
           >
-            <span>Delete</span>
-          </button>        
-        </li>
+            <ListItemButton>
+              <ListItemAvatar>
+                <Avatar
+                  alt={`Avatar n°${name}`}
+                  src={`/static/images/avatar/${name}.jpg`}
+                />
+              </ListItemAvatar>
+              <ListItemText id={id} primary={`${name}: ${number}`} />
+            </ListItemButton>
+          </ListItem>
       ))}
     </ul>
   ) : ((error && <p>Error: {error}</p> )|| <p>No contacts</p>
